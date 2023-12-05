@@ -9,11 +9,11 @@
     "lint": "eslint . --max-warnings 0"
   },
   "dependencies": {
-    "@repo/ui": "workspace:*"
+    "@devchallenges/ui": "workspace:*"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@devchallenges/eslint-config": "workspace:*",
+    "@devchallenges/typescript-config": "workspace:*",
     "@devchallenges/tailwindcss": "workspace:*"
   }
 }
