@@ -1,0 +1,8 @@
+{
+  "name": "@devchallenges/nextjs",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "next.config.js"
+  ]
+}

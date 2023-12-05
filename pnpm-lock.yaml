@@ -73,6 +73,9 @@ importers:
       '@devchallenges/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
+      '@devchallenges/nextjs':
+        specifier: workspace:*
+        version: link:../../packages/nextjs
       '@devchallenges/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
@@ -86,6 +89,9 @@ importers:
       '@devchallenges/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
+      '@devchallenges/nextjs':
+        specifier: workspace:*
+        version: link:../../packages/nextjs
       '@devchallenges/tailwindcss':
         specifier: workspace:*
         version: link:../../packages/tailwindcss
@@ -122,6 +128,8 @@ importers:
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
+
+  packages/nextjs: {}
 
   packages/tailwindcss: {}
 

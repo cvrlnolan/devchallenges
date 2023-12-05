@@ -1,4 +1,2 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
-  transpilePackages: ['@devchallenges/ui'],
-};
+module.exports = require('@devchallenges/nextjs/next.config');

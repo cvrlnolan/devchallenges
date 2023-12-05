@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@devchallenges/eslint-config": "workspace:*",
-    "@devchallenges/typescript-config": "workspace:*"
+    "@devchallenges/typescript-config": "workspace:*",
+    "@devchallenges/nextjs": "workspace:*"
   }
 }
