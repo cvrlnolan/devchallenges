@@ -83,6 +83,9 @@ importers:
         specifier: workspace:*
         version: link:../../packages/ui
     devDependencies:
+      '@devchallenges/tailwindcss':
+        specifier: workspace:*
+        version: link:../../packages/tailwindcss
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
@@ -116,6 +119,8 @@ importers:
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
+
+  packages/tailwindcss: {}
 
   packages/typescript-config: {}
 

@@ -1,0 +1,9 @@
+{
+  "name": "@devchallenges/tailwindcss",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "tailwindcss.config.js",
+    "postcss.config.js"
+  ]
+}
