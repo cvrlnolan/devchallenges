@@ -159,6 +159,8 @@ importers:
         specifier: ^5.2.2
         version: 5.2.2
 
+  packages/lib: {}
+
   packages/nextjs: {}
 
   packages/tailwindcss: {}
