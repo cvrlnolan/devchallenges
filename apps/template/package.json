@@ -1,5 +1,5 @@
 {
-  "name": "docs",
+  "name": "template",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -14,6 +14,7 @@
   "devDependencies": {
     "@devchallenges/eslint-config": "workspace:*",
     "@devchallenges/typescript-config": "workspace:*",
+    "@devchallenges/tailwindcss": "workspace:*",
     "@devchallenges/nextjs": "workspace:*"
   }
 }
