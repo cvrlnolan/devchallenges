@@ -15,6 +15,7 @@
     "@devchallenges/eslint-config": "workspace:*",
     "@devchallenges/typescript-config": "workspace:*",
     "@devchallenges/tailwindcss": "workspace:*",
-    "@devchallenges/nextjs": "workspace:*"
+    "@devchallenges/nextjs": "workspace:*",
+    "@devchallenges/lib": "workspace:*"
   }
 }
