@@ -4,5 +4,9 @@
   "private": true,
   "files": [
     "index.ts"
-  ]
+  ],
+  "devDependencies": {
+    "@devchallenges/eslint-config": "workspace:*",
+    "@devchallenges/typescript-config": "workspace:*"
+  }
 }

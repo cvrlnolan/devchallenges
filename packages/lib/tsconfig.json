@@ -1,0 +1,8 @@
+{
+  "extends": "@devchallenges/typescript-config/base.json",
+  "compilerOptions": {
+    "outDir": "dist"
+  },
+  "include": ["utils"],
+  "exclude": ["node_modules", "dist"]
+}
