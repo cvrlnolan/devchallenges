@@ -52,5 +52,6 @@ module.exports = {
     'no-irregular-whitespace': 'error',
     'no-trailing-spaces': 'error',
     'prettier/prettier': 'error',
+    'no-console': 'error',
   },
 };
