@@ -1,8 +1,10 @@
 import './globals.css';
 
+import { cn } from '@devchallenges/lib';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
+import { Footer } from '../components/footer';
 import { Toaster } from '../components/toast-wrapper';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -19,8 +21,14 @@ export default function RootLayout({
 }): JSX.Element {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body
+        className={cn(
+          inter.className,
+          'flex h-[100vh] flex-col items-center justify-center',
+        )}
+      >
         {children}
+        <Footer />
         <Toaster />
       </body>
     </html>
