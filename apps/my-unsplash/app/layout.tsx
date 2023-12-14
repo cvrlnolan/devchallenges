@@ -1,7 +1,10 @@
 import './globals.css';
 
+import { cn } from '@devchallenges/lib';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+
+import { Navbar } from '../components/navbar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,7 +20,10 @@ export default function RootLayout({
 }): JSX.Element {
   return (
     <html lang='en'>
-      <body className={inter.className}>{children}</body>
+      <body className={cn(inter.className, 'container p-2')}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
