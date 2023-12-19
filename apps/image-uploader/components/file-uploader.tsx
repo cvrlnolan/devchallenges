@@ -125,9 +125,8 @@ const ImagePreview: FC<{ imgUrl: string }> = ({ imgUrl }) => {
           <NextImage
             fill
             src={imgUrl}
-            objectFit='cover'
             alt='image'
-            style={{ borderRadius: '4px' }}
+            className='rounded object-cover'
           />
         </div>
         <div className='mt-6 flex h-11 w-full items-center justify-between rounded-lg border bg-gray-100 px-0.5'>
