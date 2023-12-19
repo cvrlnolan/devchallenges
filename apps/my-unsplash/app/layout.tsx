@@ -1,6 +1,5 @@
 import './globals.css';
 
-import { cn } from '@devchallenges/lib';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
@@ -20,9 +19,11 @@ export default function RootLayout({
 }): JSX.Element {
   return (
     <html lang='en'>
-      <body className={cn(inter.className, 'container p-2')}>
-        <Navbar />
-        {children}
+      <body className={inter.className}>
+        <div className='container'>
+          <Navbar />
+          {children}
+        </div>
       </body>
     </html>
   );
