@@ -74,12 +74,15 @@ const AddPhoto: FC = () => {
                 return setLoading(false);
               }
               const response = await addPhoto(label, photoURL);
-              if (response.error)
-                return toast({
+              if (response.error) {
+                setLoading(false);
+                toast({
                   variant: 'destructive',
                   title: 'Something went wrong',
                   description: response.error.message,
                 });
+                return;
+              }
               toast({ description: 'Photo added successfully' });
               setLabel(undefined);
               setPhotoURL(undefined);
