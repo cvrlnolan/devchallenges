@@ -12,19 +12,19 @@ export interface Database {
       photos: {
         Row: {
           created_at: string;
-          id: number;
+          id: string;
           label: string;
           photo_url: string;
         };
         Insert: {
           created_at?: string;
-          id?: number;
+          id?: string;
           label: string;
           photo_url: string;
         };
         Update: {
           created_at?: string;
-          id?: number;
+          id?: string;
           label?: string;
           photo_url?: string;
         };

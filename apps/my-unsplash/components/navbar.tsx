@@ -1,19 +1,10 @@
 'use client';
 
-import {
-  Button,
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-  Input,
-  Label,
-} from '@devchallenges/ui';
+import { Input } from '@devchallenges/ui';
 import { User } from 'lucide-react';
 import { FC } from 'react';
+
+import { AddPhoto } from './add-photo';
 
 const Navbar: FC = () => (
   <div className='flex w-full items-center justify-between px-2 py-4'>
@@ -30,36 +21,7 @@ const Navbar: FC = () => (
       </div>
     </div>
 
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button size='lg'>Add a photo</Button>
-      </DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>Add a new photo</DialogTitle>
-        </DialogHeader>
-        <div className='space-y-3'>
-          <div className='space-y-1'>
-            <Label htmlFor='label'>Label</Label>
-            <Input id='label' type='text' placeholder='Enter some label text' />
-          </div>
-          <div className='space-y-1'>
-            <Label htmlFor='photoURL'>Photo URL</Label>
-            <Input
-              id='photoURL'
-              type='text'
-              placeholder='https://source.unsplash.com/...'
-            />
-          </div>
-        </div>
-        <DialogFooter>
-          <DialogClose asChild>
-            <Button variant='ghost'>Cancel</Button>
-          </DialogClose>
-          <Button>Submit</Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+    <AddPhoto />
   </div>
 );
 

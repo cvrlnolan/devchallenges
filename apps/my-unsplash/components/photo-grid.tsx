@@ -4,11 +4,15 @@ import { Button } from '@devchallenges/ui';
 import Image from 'next/image';
 import { FC } from 'react';
 
-const PhotoGrid: FC = () => (
+import { Database } from '../lib/supabase.types';
+
+type PhotoType = Database['public']['Tables']['photos']['Row'];
+
+const PhotoGrid: FC<{ photos: PhotoType[] }> = ({ photos }) => (
   <div className='w-full px-2 py-4'>
     <div>
       <ul className='list-none columns-3'>
-        {new Array(12).fill(0).map((_, i) => (
+        {photos.map((photo, i) => (
           <li
             key={i}
             className='relative mb-4 h-auto w-full break-inside-avoid'
@@ -26,12 +30,12 @@ const PhotoGrid: FC = () => (
                 </div>
 
                 <div className='text-primary-foreground absolute bottom-4 left-0 w-full p-4 text-xl font-bold'>
-                  Some text
+                  {photo.label}
                 </div>
               </div>
             </div>
             <Image
-              src={`https://source.unsplash.com/random/${i}`}
+              src={photo.photo_url}
               alt='img'
               width={800}
               height={600}

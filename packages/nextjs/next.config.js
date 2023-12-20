@@ -9,7 +9,11 @@ module.exports = {
       },
       {
         protocol: 'https',
-        hostname: 'source.unsplash.com',
+        hostname: 'unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.unsplash.com',
       },
     ],
   },
