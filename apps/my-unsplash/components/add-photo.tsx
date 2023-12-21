@@ -28,7 +28,9 @@ const AddPhoto: FC = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button size='lg'>Add a photo</Button>
+        <Button size='lg' className='w-full md:w-auto'>
+          Add a photo
+        </Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>

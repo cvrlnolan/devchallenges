@@ -15,7 +15,7 @@ const PhotoGrid: FC<{ photos: PhotoType[] }> = ({ photos }) => {
   return (
     <div className='w-full px-2 py-4'>
       <div>
-        <ul className='list-none columns-3'>
+        <ul className='list-none columns-2 md:columns-3'>
           {(searchTerm
             ? photos.filter((photo) =>
                 photo.label.toLowerCase().includes(searchTerm.toLowerCase()),
@@ -27,12 +27,12 @@ const PhotoGrid: FC<{ photos: PhotoType[] }> = ({ photos }) => {
               className='relative mb-4 h-auto w-full break-inside-avoid'
             >
               <div className='absolute left-0 top-0 h-full w-full cursor-pointer rounded-2xl bg-slate-900/40 opacity-0 hover:opacity-100'>
-                <div className='relative h-full w-full'>
-                  <div className='flex justify-end p-2'>
+                <div className='flex h-full w-full flex-col justify-between p-4'>
+                  <div className='flex justify-end'>
                     <DeleteModal id={photo.id} />
                   </div>
 
-                  <div className='text-primary-foreground absolute bottom-4 left-0 w-full p-4 text-xl font-bold'>
+                  <div className='text-primary-foreground line-clamp-1 w-full text-sm font-bold md:line-clamp-2 md:text-xl'>
                     {photo.label}
                   </div>
                 </div>
