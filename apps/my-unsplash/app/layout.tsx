@@ -3,6 +3,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
+import { Footer } from '../components/footer';
 import { SearchContextWrapper } from '../components/search-context-wrapper';
 import { Toaster } from '../components/toast-wrapper';
 
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <main className='container'>
           <SearchContextWrapper>{children}</SearchContextWrapper>
+          <Footer />
         </main>
         <Toaster />
       </body>
