@@ -24,7 +24,7 @@ export default function RootLayout({
       <body
         className={cn(
           inter.className,
-          'flex h-[100vh] flex-col items-center justify-center',
+          'flex h-[100vh] flex-col items-center justify-center p-2',
         )}
       >
         {children}
