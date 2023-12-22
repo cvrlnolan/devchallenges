@@ -1,0 +1,21 @@
+{
+  "name": "catwiki",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3001",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --max-warnings 0"
+  },
+  "dependencies": {
+    "@devchallenges/ui": "workspace:*"
+  },
+  "devDependencies": {
+    "@devchallenges/eslint-config": "workspace:*",
+    "@devchallenges/typescript-config": "workspace:*",
+    "@devchallenges/tailwindcss": "workspace:*",
+    "@devchallenges/nextjs": "workspace:*",
+    "@devchallenges/lib": "workspace:*"
+  }
+}

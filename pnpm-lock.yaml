@@ -112,6 +112,28 @@ importers:
         specifier: ^5.2.2
         version: 5.2.2
 
+  apps/catwiki:
+    dependencies:
+      '@devchallenges/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
+    devDependencies:
+      '@devchallenges/eslint-config':
+        specifier: workspace:*
+        version: link:../../packages/eslint-config
+      '@devchallenges/lib':
+        specifier: workspace:*
+        version: link:../../packages/lib
+      '@devchallenges/nextjs':
+        specifier: workspace:*
+        version: link:../../packages/nextjs
+      '@devchallenges/tailwindcss':
+        specifier: workspace:*
+        version: link:../../packages/tailwindcss
+      '@devchallenges/typescript-config':
+        specifier: workspace:*
+        version: link:../../packages/typescript-config
+
   apps/image-uploader:
     dependencies:
       '@devchallenges/ui':
