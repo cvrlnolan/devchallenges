@@ -15,6 +15,10 @@ module.exports = {
         protocol: 'https',
         hostname: '**.unsplash.com',
       },
+      {
+        protocol: 'https',
+        hostname: '**.thecatapi.com',
+      },
     ],
   },
 };

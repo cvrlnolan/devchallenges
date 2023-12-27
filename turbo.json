@@ -21,7 +21,8 @@
         "NEXT_PUBLIC_FIREBASE_APP_ID",
         "NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID",
         "NEXT_PUBLIC_SUPABASE_URL",
-        "SUPABASE_KEY"
+        "SUPABASE_KEY",
+        "THE_CAT_API_KEY"
       ]
     }
   }

@@ -1,9 +1,11 @@
 import './globals.css';
 
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Montserrat } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
+import { TopBar } from '../components/top-bar';
+
+const montserrat = Montserrat({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Catwiki',
@@ -17,8 +19,11 @@ export default function RootLayout({
 }): JSX.Element {
   return (
     <html lang='en'>
-      <body className={inter.className}>
-        <main className='container'>{children}</main>
+      <body className={montserrat.className}>
+        <main className='container'>
+          <TopBar />
+          {children}
+        </main>
       </body>
     </html>
   );
