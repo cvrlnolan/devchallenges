@@ -8,20 +8,22 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@devchallenges/ui';
-import { Cat, MoveRight } from 'lucide-react';
+import { Cat, Loader2, MoveRight } from 'lucide-react';
 import Image from 'next/image';
 import { FC, useState } from 'react';
 
 import { searchBreed } from '../lib/actions';
+import { catPhotos } from '../lib/constants';
 import type { CatBreed } from '../lib/types';
 import { glassAntiqua } from '../style/fonts';
 
 const HomeBanner: FC<{ breeds: CatBreed[] }> = ({ breeds }) => {
   const [searchText, setSearchText] = useState<string>();
   const [searchedBreeds, setSearchedBreeds] = useState<CatBreed[]>();
+  const [loading, setLoading] = useState(false);
 
   return (
-    <div className='my-4 w-full rounded-2xl'>
+    <div className='my-4 w-full grow rounded-2xl'>
       <div className='relative flex h-[600px] w-full flex-col justify-center'>
         <Image
           fill
@@ -40,7 +42,7 @@ const HomeBanner: FC<{ breeds: CatBreed[] }> = ({ breeds }) => {
             Get to know more about your cat breed
           </div>
           <div className='mt-4 w-full'>
-            <Popover open={Boolean(searchedBreeds?.length)}>
+            <Popover open={Boolean(searchedBreeds?.length) || loading}>
               <PopoverTrigger className='w-full'>
                 <Input
                   type='text'
@@ -49,9 +51,11 @@ const HomeBanner: FC<{ breeds: CatBreed[] }> = ({ breeds }) => {
                   value={searchText}
                   onChange={async (e) => {
                     setSearchText(e.target.value);
-                    searchBreed(e.target.value).then((breeds) =>
-                      setSearchedBreeds(breeds),
-                    );
+                    setLoading(true);
+                    searchBreed(e.target.value).then((breeds) => {
+                      setLoading(false);
+                      setSearchedBreeds(breeds);
+                    });
                   }}
                 />
               </PopoverTrigger>
@@ -60,22 +64,28 @@ const HomeBanner: FC<{ breeds: CatBreed[] }> = ({ breeds }) => {
                 onOpenAutoFocus={(e) => e.preventDefault()}
                 onCloseAutoFocus={(e) => e.preventDefault()}
               >
-                <ul>
-                  {searchedBreeds?.map((breed) => (
-                    <li key={breed.id}>
-                      <Button
-                        variant='ghost'
-                        className='w-full justify-start'
-                        onClick={() => {
-                          setSearchText(breed.name);
-                          setSearchedBreeds(undefined);
-                        }}
-                      >
-                        {breed.name}
-                      </Button>
-                    </li>
-                  ))}
-                </ul>
+                {loading ? (
+                  <div className='flex w-full justify-center'>
+                    <Loader2 size={24} className='animate-spin' />
+                  </div>
+                ) : (
+                  <ul>
+                    {searchedBreeds?.map((breed) => (
+                      <li key={breed.id}>
+                        <Button
+                          variant='ghost'
+                          className='w-full justify-start'
+                          onClick={() => {
+                            setSearchText(breed.name);
+                            setSearchedBreeds(undefined);
+                          }}
+                        >
+                          {breed.name}
+                        </Button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </PopoverContent>
             </Popover>
           </div>
@@ -113,6 +123,47 @@ const HomeBanner: FC<{ breeds: CatBreed[] }> = ({ breeds }) => {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+      <div className='mt-10 grid w-full grid-cols-2 items-center gap-4'>
+        <div>
+          <div className='space-y-2'>
+            <div className='bg-primary h-1 w-14 rounded-full' />
+            <p className='text-2xl font-bold'>Why should you have a cat?</p>
+          </div>
+          <div className='mt-4'>
+            <p>
+              Having a cat around you can actually trigger the release of
+              calming chemicals in your body which lower your stress and
+              anxietty levels
+            </p>
+            <div className='mt-4'>
+              <Button variant='link' className='px-0 font-semibold uppercase'>
+                Read more
+                <MoveRight size={24} className='ml-2' />
+              </Button>
+            </div>
+          </div>
+        </div>
+        <div className='mt-4'>
+          <ul className='list-none columns-2'>
+            {catPhotos.map((photo, i) => (
+              <li key={i} className='mb-4 h-auto w-full break-inside-avoid'>
+                <Image
+                  alt={`photo_${i}`}
+                  src={photo}
+                  width={800}
+                  height={600}
+                  sizes='100vw'
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                  }}
+                  className='rounded-2xl object-cover'
+                />
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
