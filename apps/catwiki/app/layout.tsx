@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={montserrat.className}>
-        <main className='container'>
+        <main className='container flex min-h-screen flex-col'>
           <TopBar />
           {children}
           <Footer />

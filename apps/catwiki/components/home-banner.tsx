@@ -23,7 +23,7 @@ const HomeBanner: FC<{ breeds: CatBreed[] }> = ({ breeds }) => {
   const [loading, setLoading] = useState(false);
 
   return (
-    <div className='my-4 w-full grow rounded-2xl'>
+    <div className='my-4 w-full grow'>
       <div className='relative flex h-[600px] w-full flex-col justify-center'>
         <Image
           fill
