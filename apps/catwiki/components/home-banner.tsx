@@ -10,6 +10,7 @@ import {
 } from '@devchallenges/ui';
 import { Cat, Loader2, MoveRight } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FC, useState } from 'react';
 
 import { searchBreed } from '../lib/actions';
@@ -73,6 +74,7 @@ const HomeBanner: FC<{ breeds: CatBreed[] }> = ({ breeds }) => {
                     {searchedBreeds?.map((breed) => (
                       <li key={breed.id}>
                         <Button
+                          asChild
                           variant='ghost'
                           className='w-full justify-start'
                           onClick={() => {
@@ -80,7 +82,7 @@ const HomeBanner: FC<{ breeds: CatBreed[] }> = ({ breeds }) => {
                             setSearchedBreeds(undefined);
                           }}
                         >
-                          {breed.name}
+                          <Link href={`/breed/${breed.id}`}>{breed.name}</Link>
                         </Button>
                       </li>
                     ))}
@@ -110,17 +112,19 @@ const HomeBanner: FC<{ breeds: CatBreed[] }> = ({ breeds }) => {
           </div>
           <div className='mt-10 grid w-full grid-cols-4'>
             {breeds.map((breed) => (
-              <div className='space-y-1 justify-self-center'>
-                <div key={breed.id} className='relative h-[250px] w-[250px]'>
-                  <Image
-                    fill
-                    alt={breed.name}
-                    src={`https://cdn2.thecatapi.com/images/${breed.reference_image_id}.jpg`}
-                    className='rounded-2xl object-cover'
-                  />
+              <Link href={`/breed/${breed.id}`}>
+                <div className='space-y-1 justify-self-center'>
+                  <div key={breed.id} className='relative h-[250px] w-[250px]'>
+                    <Image
+                      fill
+                      alt={breed.name}
+                      src={`https://cdn2.thecatapi.com/images/${breed.reference_image_id}.jpg`}
+                      className='rounded-2xl object-cover'
+                    />
+                  </div>
+                  <p className='font-semibold'>{breed.name}</p>
                 </div>
-                <p className='font-semibold'>{breed.name}</p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

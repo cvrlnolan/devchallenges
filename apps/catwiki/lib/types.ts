@@ -18,6 +18,17 @@ export const CatBreedSchema = z.object({
   reference_image_id: z.string().optional(),
 });
 
+export const CatBreedImageSchema = z.object({
+  id: z.string(),
+  url: z.string(),
+  width: z.number(),
+  height: z.number(),
+});
+
 export const CatBreedListSchema = z.array(CatBreedSchema);
 
+export const CatBreedImageListSchema = z.array(CatBreedImageSchema);
+
 export type CatBreed = z.infer<typeof CatBreedSchema>;
+
+export type CatImage = z.infer<typeof CatBreedImageSchema>;
