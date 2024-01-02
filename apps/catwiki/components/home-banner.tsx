@@ -104,10 +104,12 @@ const HomeBanner: FC<{ breeds: CatBreed[] }> = ({ breeds }) => {
               66+ Breeds for you to discover
             </p>
             <div className='flex items-center gap-2 self-end'>
-              <Button variant='link' className='font-semibold uppercase'>
-                See more
-                <MoveRight size={24} className='ml-2' />
-              </Button>
+              <Link href='/breed/most-searched'>
+                <Button variant='link' className='font-semibold uppercase'>
+                  See more
+                  <MoveRight size={24} className='ml-2' />
+                </Button>
+              </Link>
             </div>
           </div>
           <div className='mt-10 grid w-full grid-cols-4'>
