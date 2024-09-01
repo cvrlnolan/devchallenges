@@ -1,7 +1,7 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
-  "pipeline": {
+  "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"]
@@ -21,7 +21,7 @@
         "NEXT_PUBLIC_FIREBASE_APP_ID",
         "NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID",
         "NEXT_PUBLIC_SUPABASE_URL",
-        "SUPABASE_KEY",
+        "NEXT_PUBLIC_SUPABASE_KEY",
         "THE_CAT_API_KEY"
       ]
     }
