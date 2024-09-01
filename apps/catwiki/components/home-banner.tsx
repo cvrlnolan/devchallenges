@@ -25,7 +25,8 @@ const HomeBanner: FC<{ breeds: CatBreed[] }> = ({ breeds }) => {
 
   return (
     <div className='my-4 w-full grow'>
-      <div className='relative flex h-[600px] w-full flex-col justify-center'>
+      {/* Desktop View */}
+      <div className='relative hidden h-[600px] w-full flex-col justify-center md:flex'>
         <Image
           fill
           alt='home_cat'
@@ -131,6 +132,8 @@ const HomeBanner: FC<{ breeds: CatBreed[] }> = ({ breeds }) => {
           </div>
         </div>
       </div>
+      {/* Mobile View  */}
+      <div></div>
       <div className='mt-10 grid w-full grid-cols-2 items-center gap-4'>
         <div>
           <div className='space-y-2'>
