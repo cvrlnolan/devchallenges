@@ -1,4 +1,5 @@
 import { supabase } from '@devchallenges/lib';
+import { cookies } from 'next/headers';
 
 import { PhotoGrid } from '../components/photo-grid';
 import { Database } from '../lib/supabase.types';
@@ -17,6 +18,7 @@ const getPhotos = async () => {
 };
 
 export default async function Page(): Promise<JSX.Element> {
+  cookies();
   const photos = await getPhotos();
 
   return <PhotoGrid photos={photos} />;
